@@ -9,7 +9,6 @@ permissions:
   contents: read
 
 jobs:
-
   build-backend:
     runs-on: ubuntu-latest
 
@@ -76,11 +75,18 @@ jobs:
 
       - name: Build Backend Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/leave-track-backend:latest ./backend
+          docker build \
+            -t ${{ secrets.DOCKER_USERNAME }}/leave-track-backend:latest \
+            ./backend
 
       - name: Build Frontend Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/leave-track-frontend:latest ./frontend
+          docker build \
+            -t ${{ secrets.DOCKER_USERNAME }}/leave-track-frontend:latest \
+            ./frontend
+
+      - name: List Docker Images
+        run: docker images
 
       - name: Push Backend Image
         run: |
