@@ -10,11 +10,11 @@ resource "aws_vpc" "main" {
 }
 resource "aws_subnet" "public1" {
 
-  vpc_id                  = aws_vpc.main.id
+  vpc_id = aws_vpc.main.id
 
-  cidr_block              = "10.0.1.0/24"
+  cidr_block = "10.0.1.0/24"
 
-  availability_zone       = "${var.aws_region}a"
+  availability_zone = "${var.aws_region}a"
 
   map_public_ip_on_launch = true
 
@@ -198,7 +198,7 @@ resource "aws_security_group" "eks" {
 }
 resource "aws_security_group" "rds" {
 
-  name   = "${var.project_name}-rds-sg"
+  name = "${var.project_name}-rds-sg"
 
   vpc_id = aws_vpc.main.id
 
