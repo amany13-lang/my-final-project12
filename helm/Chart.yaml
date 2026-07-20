@@ -1,0 +1,7 @@
+apiVersion: v2
+name: leave-track-system
+description: Helm chart for Leave Track System
+type: application
+
+version: 0.1.0
+appVersion: "1.0.0"

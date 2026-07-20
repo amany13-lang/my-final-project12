@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: backend
+
+spec:
+  replicas: {{ .Values.backend.replicaCount }}
+
+  selector:
+    matchLabels:
+      app: backend
+
+  template:
+    metadata:
+      labels:
+        app: backend
+
+    spec:
+      containers:
+        - name: backend
+          image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}"
+          imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
+
+          ports:
+            - containerPort: 8000
+
+          env:
+            - name: NODE_ENV
+              value: production
+
+            - name: DB_HOST
+              value: postgres-postgresql
+
+            - name: DB_PORT
+              value: "5432"
+
+            - name: DB_USER
+              value: admin
+
+            - name: DB_PASSWORD
+              value: password
+
+            - name: DB_NAME
+              value: leave_db

@@ -1,0 +1,30 @@
+backend:
+  image:
+    repository: amany13-lang/leave-track-backend
+    tag: latest
+    pullPolicy: Never
+
+  replicaCount: 1
+
+  service:
+    type: ClusterIP
+    port: 5000
+
+frontend:
+  image:
+    repository: amany13-lang/leave-track-frontend
+    tag: latest
+    pullPolicy: Never
+
+  replicaCount: 1
+
+  service:
+    type: LoadBalancer
+    port: 80
+
+monitoring:
+  prometheus:
+    enabled: true
+
+    kubeEtcd:
+  enabled: false
