@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Track System Documentation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f9;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 38px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        section {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,.08);
+        }
+
+        h2 {
+            color: #2563eb;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #374151;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        img {
+            width: 100%;
+            max-width: 900px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        video {
+            display: block;
+            margin: auto;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Leave Track System</h1>
+
+    <p>DevOps Integrated Diploma Final Project</p>
+
+</header>
+
+
+<section>
+
+<h2>Table of Contents</h2>
+
+<ul>
+<li>Project Overview</li>
+<li>Technology Stack</li>
+<li>System Architecture</li>
+<li>Application Demo</li>
+<li>Docker</li>
+<li>Kubernetes</li>
+<li>Helm</li>
+<li>Terraform</li>
+<li>CI/CD Pipeline</li>
+<li>Monitoring</li>
+<li>Project Structure</li>
+<li>Demo Video</li>
+<li>Future Improvements</li>
+</ul>
+
+</section>
+
+
+<section>
+
+<h2>Project Overview</h2>
+
+<p>
+
+Leave Track System is a full-stack Leave Management application developed using React, Node.js, Express, and PostgreSQL.
+
+The project follows modern DevOps practices by containerizing the application with Docker, deploying it using Kubernetes and Helm, provisioning infrastructure with Terraform, and automating the deployment process through GitHub Actions.
+
+</p>
+
+</section>
+
+
+<section>
+
+<h2>Technology Stack</h2>
+
+<ul>
+
+<li>React.js</li>
+
+<li>Node.js</li>
+
+<li>Express.js</li>
+
+<li>PostgreSQL</li>
+
+<li>Docker</li>
+
+<li>Kubernetes</li>
+
+<li>Helm</li>
+
+<li>Terraform</li>
+
+<li>GitHub Actions</li>
+
+<li>Prometheus</li>
+
+<li>Grafana</li>
+
+<li>AWS</li>
+
+</ul>
+
+</section>
+
+
+<section>
+
+<h2>System Architecture</h2>
+
+<p>
+
+The application consists of a React frontend, Node.js backend, PostgreSQL database, Kubernetes cluster, monitoring stack, and CI/CD pipeline.
+
+</p>
+
+<img src="./image//Architecture.png" alt="Architecture">
+
+</section>
+
+
+<section>
+
+    <h2>Application Demo</h2>
+
+    <p>
+        This video demonstrates the Leave Track System in action, including
+        authentication, dashboard, leave management, and application features.
+    </p>
+
+    <video width="100%" controls>
+        <source src="./videos/app1mp4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+</section>
+
+<h2>Docker</h2>
+
+<p>Docker images are created for both backend and frontend services.</p>
+
+<pre>
+docker build -t leave-track-backend ./backend
+
+docker build -t leave-track-frontend ./frontend
+
+docker compose up -d
+</pre>
+
+<img src="./image/docker.png" alt="Docker">
+
+</section>
+
+
+<section>
+
+<h2>Kubernetes Deployment</h2>
+
+<p>The application is deployed to Kubernetes.</p>
+
+<pre>
+kubectl get pods
+
+kubectl get svc
+
+kubectl get deployments
+</pre>
+
+<img src="./image/kubernetes.png" alt="Kubernetes">
+
+</section>
+
+
+<section>
+
+<h2>Helm Deployment</h2>
+
+<p>Helm is used to package and deploy the application.</p>
+
+<pre>
+helm install leave-track-system ./helm
+
+helm upgrade leave-track-system ./helm
+
+helm list
+</pre>
+
+<img src="./image/helm.png" alt="Helm">
+
+</section>
+
+
+<section>
+
+<h2>Terraform Infrastructure</h2>
+
+<p>
+
+Terraform provisions the AWS infrastructure.
+
+</p>
+
+<ul>
+
+<li>VPC</li>
+
+<li>Public & Private Subnets</li>
+
+<li>Internet Gateway</li>
+
+<li>NAT Gateway</li>
+
+<li>Route Tables</li>
+
+<li>Security Groups</li>
+
+<li>EKS Cluster</li>
+
+<li>RDS Database</li>
+
+</ul>
+
+<img src="./image/terraform.png" alt="Terraform">
+
+</section>
+
+
+<section>
+
+<h2>CI/CD Pipeline</h2>
+
+<p>GitHub Actions automates the software delivery process.</p>
+
+<ol>
+
+<li>Checkout Source Code</li>
+
+<li>Install Dependencies</li>
+
+<li>Backend Build</li>
+
+<li>Frontend Build</li>
+
+<li>Docker Build</li>
+
+<li>Docker Push to Docker Hub</li>
+
+<li>Terraform Init</li>
+
+<li>Terraform Validate</li>
+
+<li>Terraform Plan</li>
+
+<li>Terraform Apply</li>
+
+</ol>
+
+<img src="./image/work flow run.png" alt="GitHub Actions">
+
+</section>
+
+
+<section>
+
+<h2>Monitoring</h2>
+
+<p>Monitoring is implemented using Prometheus and Grafana.</p>
+
+<h3>Prometheus</h3>
+
+<img src="./image/prometheus.png" alt="Prometheus">
+
+<h3>Grafana Dashboard</h3>
+
+<img src="./image/crafana dashboard.png" alt="Grafana">
+
+</section>
+
+
+<section>
+
+<h2>Project Structure</h2>
+
+<pre>
+leave-track-system/
+
+├── backend/
+
+├── frontend/
+
+├── helm/
+
+├── infrastructure/
+
+│   └── terraform/
+
+├── docs/
+
+├── .github/
+
+│   └── workflows/
+
+└── README.md
+</pre>
+
+</section>
+
+
+<section>
+
+<h2>Demo Video</h2>
+
+<video width="800" controls>
+
+<source src="./videos/workflow.mp4" type="video/mp4">
+
+Your browser does not support the video tag.
+
+</video>
+
+</section>
+
+
+<section>
+
+<h2>Future Improvements</h2>
+
+<ul>
+
+<li>Deploy to Amazon EKS</li>
+
+<li>Use AWS Secrets Manager</li>
+
+<li>HTTPS with Ingress Controller</li>
+
+<li>Horizontal Pod Autoscaler</li>
+
+<li>Centralized Logging</li>
+
+<li>Automatic Rollback Strategy</li>
+
+</ul>
+
+</section>
+
+
+<footer>
+
+<p>Leave Track System | DevOps Integrated Diploma Final Project</p>
+
+</footer>
+
+</body>
+
+</html>
